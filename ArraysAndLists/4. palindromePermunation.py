@@ -1,5 +1,6 @@
 from collections import Counter
 
+# String has to have maximum of 1 characters that occur only once 
 def palindromePermutations(string):
     hm = Counter(string)
     numOfSingleLetters = 0
