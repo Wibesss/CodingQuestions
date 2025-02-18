@@ -1,5 +1,7 @@
 from collections import Counter
 
+# Given two strings, write a method to decide if one is a permutation of the other
+
 # O(N) time, O(N) space
 def isPermutation(string1, string2):
     if len(string1) != len(string2):

@@ -1,4 +1,6 @@
 
+# Implement an algorithm to determine if a string has all unique characters. What if youcannot use additional data structures?
+
 def isUnique(string):
     s = set()
     for char in string:

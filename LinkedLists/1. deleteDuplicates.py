@@ -1,16 +1,39 @@
-from LinkedList import LinkedList, Node
+from LinkedList import LinkedList
 
-def deleteDuplicates(list):
+# Write code to remove duplicates from an unsorted linked list.
+
+def deleteDuplicates(linkedList):
     s = set()
-    
     prev = None
-    curr = list.head
-    while curr.next:
+    curr = linkedList.head
+    while curr:
         if curr.data in s:
             prev.next = curr.next
-            curr.data = None
-        
-        s.add(curr.data)
+        else:
+            s.add(curr.data)
+            prev = curr
         curr = curr.next
         
+def deleteDuplicatesNoSet(linkedList):
+    curr = linkedList.head
+    while curr:
+        runner = curr
+        while runner.next:
+            if runner.next.data == curr.data:
+                runner.next = runner.next.next
+            else:
+                runner = runner.next
+        curr = curr.next
+
+linked_list = LinkedList()
+linked_list.append(10)
+linked_list.append(20)
+linked_list.append(20)
+linked_list.append(30)
+linked_list.append(30)
+linked_list.display()
+
+
+deleteDuplicatesNoSet(linked_list)
+linked_list.display()
         

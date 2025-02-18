@@ -1,9 +1,11 @@
 
+# : Write an algorithm such that if an element in an MxN matrix is 0, its entire row and column are set to 0.
+
 def zeroMatrix(matrix):
     n = len(matrix)
     m = len(matrix[0])
-    rows = [False for x in range(n)]
-    collums = [False for x in range(m)]
+    rows = [False for _ in range(n)]
+    collums = [False for _ in range(m)]
   
     for i in range(n):
         for j in range(m):
