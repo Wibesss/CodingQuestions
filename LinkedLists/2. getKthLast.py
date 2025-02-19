@@ -16,11 +16,11 @@ def getKthLast(linkedList, k):
     return curr.data
 
 linked_list = LinkedList()
-linked_list.append(10)
-linked_list.append(20)
-linked_list.append(20)
-linked_list.append(30)
-linked_list.append(30)
-linked_list.display()
+linked_list.appendNode(10)
+linked_list.appendNode(20)
+linked_list.appendNode(20)
+linked_list.appendNode(30)
+linked_list.appendNode(30)
+linked_list.displayList()
 
 print(getKthLast(linked_list, 5))

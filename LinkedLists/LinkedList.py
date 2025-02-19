@@ -19,18 +19,15 @@ class LinkedList:
         while last.next:
             last = last.next
         last.next = new_node
-
-
-    def appendList(self, other_list):
+    
+    
+    def appendToHead(self, data):
+        new_node = ListNode(data)
         if not self.head:
-            self.head = other_list.head
+            self.head = new_node
             return
-
-        last = self.head
-        while last.next:
-            last = last.next
-
-        last.next = other_list.head 
+        new_node.next = self.head
+        self.head = new_node
 
 
     def displayList(self):

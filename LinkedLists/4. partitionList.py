@@ -7,18 +7,42 @@ from LinkedList import LinkedList
 # it does not need to appear between the left and right partitions.
 
 def paritionList(linkedList, val):
+    if not linkedList.head or not linkedList.head.next:
+        return linkedList
+
     smaller = LinkedList()
     bigger = LinkedList()
     
     curr = linkedList.head
     
     while curr:
-        if curr.data >= val:
-            bigger.append(curr.data)
+        if curr.data < val:
+            smaller.appendNode(curr.data)
         else:
-            smaller.append(curr.data)
+            bigger.appendNode(curr.data)
         curr = curr.next
     
-    return smaller.appendList(bigger)
+    if not smaller.head:
+        return bigger
     
+    last = smaller.head
+    while last.next:
+        last = last.next
     
+    last.next = bigger.head
+
+    return smaller
+
+linked_list = LinkedList()
+linked_list.appendNode(25)
+linked_list.appendNode(30)
+linked_list.appendNode(35)
+linked_list.appendNode(10)
+linked_list.appendNode(15)
+linked_list.appendNode(20)
+
+linked_list.displayList()
+
+linked_list = paritionList(linked_list, 20)
+
+linked_list.displayList()
