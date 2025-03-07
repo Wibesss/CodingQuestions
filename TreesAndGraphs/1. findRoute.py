@@ -8,7 +8,7 @@ def findRoute(node1: GraphNode, node2: GraphNode):
     if node1 is None or node2 is None:
         return False
 
-    if node1 == node2:  # Direct match
+    if node1 == node2:
         return True
 
     visited = set()
@@ -16,17 +16,17 @@ def findRoute(node1: GraphNode, node2: GraphNode):
     q = deque([node1])
 
     while q:
-        curr = q.popleft()
+        curr = q.pop()
         
         if curr in visited:
             continue
         
         visited.add(curr)
-
+        
         for neighbor in curr.children:
-            if neighbor == node2:  # Found the target node
+            if neighbor == node2:
                 return True
-            q.append(neighbor)
+            q.appendleft(neighbor)
     
     return False
 

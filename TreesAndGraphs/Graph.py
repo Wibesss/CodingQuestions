@@ -1,14 +1,9 @@
 class GraphNode:
-    name = None
-    children = None
-    
     def __init__(self, name):
         self.name = name
         self.children = []
 
 class Graph:
-    nodes = None
-    
     def __init__(self):
         self.nodes = []
 
