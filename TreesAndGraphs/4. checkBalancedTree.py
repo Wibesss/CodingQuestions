@@ -7,18 +7,17 @@ def checkBalancedTree(node):
     if node == None:
         return True
     
-    def getHeight(node):
-        if node.leftChild == None and node.leftChild == None:
-            return 0
-        
-        left = getHeight(node.leftChild)
-        right = getHeight(node.rightChild)
-        return max(right, left) + 1
-    
     heightDiff = getHeight(node.leftChild) - getHeight(node.rightChild)
     
     if abs(heightDiff) > 1:
         return False
     else:
         return checkBalancedTree(node.leftChild) and checkBalancedTree(node.rightChild)
-    
+
+def getHeight(node):
+        if node.leftChild == None and node.leftChild == None:
+            return 0
+        
+        left = getHeight(node.leftChild)
+        right = getHeight(node.rightChild)
+        return max(right, left) + 1
